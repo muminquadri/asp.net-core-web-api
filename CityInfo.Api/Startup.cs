@@ -25,6 +25,7 @@ namespace CityInfo.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseStatusCodePages();
 
             app.UseMvc();
         }
