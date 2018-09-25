@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Serialization;
 
 namespace CityInfo.Api
 {
@@ -16,6 +17,17 @@ namespace CityInfo.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+                //logic to set json output property name to same as defined in class name. Normally we get id in JSON 
+                //when in class its defined as Id i-e camel case for all properties. So if we want the case to be same
+                //we use this logic
+                //.AddJsonOptions(o=>
+                //{
+                //    if (o.SerializerSettings.ContractResolver != null)
+                //    {
+                //        var castedResolver = o.SerializerSettings.ContractResolver as DefaultContractResolver;
+                //        castedResolver.NamingStrategy = null;
+                //    }
+                //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
