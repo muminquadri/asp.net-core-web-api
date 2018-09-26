@@ -19,7 +19,7 @@ namespace CityInfo.Api
         {
             services.AddMvc().
                 AddMvcOptions(o=>o.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter()));//this allows the
-            //request to be consumed in xml apart from default json.
+            //request to be consumed in xml apart from default json i-e ur response can be in xml apart from json.
                 //below logic to set json output property name to same as defined in class name. Normally we get id in JSON 
                 //when in class its defined as Id i-e camel case for all properties. So if we want the case to be same
                 //we use this logic
