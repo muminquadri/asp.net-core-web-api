@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CityInfo.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -22,18 +23,19 @@ namespace CityInfo.Api
         {
             services.AddMvc().
                 AddMvcOptions(o=>o.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter()));//this allows the
-            //request to be consumed in xml apart from default json i-e ur response can be in xml apart from json.
-                //below logic to set json output property name to same as defined in class name. Normally we get id in JSON 
-                //when in class its defined as Id i-e camel case for all properties. So if we want the case to be same
-                //we use this logic
-                //.AddJsonOptions(o=>
-                //{
-                //    if (o.SerializerSettings.ContractResolver != null)
-                //    {
-                //        var castedResolver = o.SerializerSettings.ContractResolver as DefaultContractResolver;
-                //        castedResolver.NamingStrategy = null;
-                //    }
-                //});
+                                                                                                         //request to be consumed in xml apart from default json i-e ur response can be in xml apart from json.
+                                                                                                         //below logic to set json output property name to same as defined in class name. Normally we get id in JSON 
+                                                                                                         //when in class its defined as Id i-e camel case for all properties. So if we want the case to be same
+                                                                                                         //we use this logic
+                                                                                                         //.AddJsonOptions(o=>
+                                                                                                         //{
+                                                                                                         //    if (o.SerializerSettings.ContractResolver != null)
+                                                                                                         //    {
+                                                                                                         //        var castedResolver = o.SerializerSettings.ContractResolver as DefaultContractResolver;
+                                                                                                         //        castedResolver.NamingStrategy = null;
+                                                                                                         //    }
+                                                                                                         //});
+            services.AddTransient<LocalMailService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
