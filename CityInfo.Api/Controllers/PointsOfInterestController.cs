@@ -16,6 +16,7 @@ namespace CityInfo.Api.Controllers
     {
         private ILogger<PointsOfInterestController> _logger;
         // private LocalMailService _mailService;
+        // we have 2 implementations if IMailService interface in startup.cs. either 1 is called depending on debug or release
         private IMailService _mailService;
         //public PointsOfInterestController(ILogger<PointsOfInterestController> logger, LocalMailService mailService)
 
