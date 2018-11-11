@@ -56,7 +56,7 @@ namespace CityInfo.Api
 #else
             services.AddTransient<IMailService, CloudMailService>();
 #endif
-            var connectionString = @"Server=LAPTOP-JNTRM3TU\SQLEXPRESS;Database=CityInfoDB;Trusted_Connection=True;";
+            var connectionString = Startup.Configuration["connectionStrings:cityInfoDBConnectionString"];
             //this will be registered with a scoped lifetime by default i-e once per request
             services.AddDbContext<CityInfoContext>(o=>o.UseSqlServer(connectionString));
         }
