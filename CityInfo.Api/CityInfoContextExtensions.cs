@@ -9,7 +9,8 @@ namespace CityInfo.Api
     public static class CityInfoContextExtensions
     {
         public static void EnsureSeedDataForContext(this CityInfoContext context)
-        //this keyword is an extension method here.It means we can call CityInfoContextObject.EnsureSeedDataForContext
+        //this keyword is an extension method here.
+        //It means we can call CityInfoContextObject.EnsureSeedDataForContext
         //  https://weblogs.asp.net/scottgu/new-orcas-language-feature-extension-methods
         //https://weblogs.asp.net/scottgu/new-orcas-language-feature-extension-methods
         {
